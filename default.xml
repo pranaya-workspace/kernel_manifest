@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- Remotes -->
+    <remote name="aosp"
+            fetch="https://android.googlesource.com"
+            review="https://android-review.googlesource.com"
+            revision="master-kernel-build-2021" />
+
+    <remote name="workspace"
+            fetch="https://github.com/pranaya-workspace"
+            pushurl="ssh://git@github.com/pranaya-workspace"
+            revision="udc" />
+
+    <remote name="mt6789-dev"
+            fetch="https://github.com/xiaomi-mt6789-devs"
+            revision="udc" />
+
+    <!-- Defaults -->
+    <default remote="aosp"
+             sync-j="8"
+             sync-c="true"
+             sync-tags="false" />
+
+    <!-- yunluo additions -->
+    <project path="yunluo-kernel" name="android_kernel_xiaomi_yunluo" groups="yunluo" remote="workspace">
+        <linkfile src="build.config.yunluo" dest="build.config" />
+    </project>
+    <project path="mediatek-modules/gpu" name="kernel_mediatek-modules_gpu" groups="yunluo" remote="mt6789-dev" />
+    <project path="mediatek-modules/connectivity/bt/mt66xx" name="kernel_mediatek-modules_connectivity_bt_mt66xx" groups="yunluo" remote="mt6789-dev" />
+    <project path="mediatek-modules/connectivity/common" name="kernel_mediatek-modules_connectivity_common" groups="yunluo" remote="mt6789-dev" />
+    <project path="mediatek-modules/connectivity/connfem" name="kernel_mediatek-modules_connectivity_connfem" groups="yunluo" remote="mt6789-dev" />
+    <project path="mediatek-modules/connectivity/fmradio" name="kernel_mediatek-modules_connectivity_fmradio" groups="yunluo" remote="mt6789-dev" />
+    <project path="mediatek-modules/connectivity/wlan/adaptor" name="kernel_mediatek-modules_connectivity_wlan_adaptor" groups="yunluo" remote="mt6789-dev" />
+    <project path="mediatek-modules/connectivity/wlan/core/gen4m" name="kernel_mediatek-modules_connectivity_wlan_core_gen4m" groups="yunluo" remote="mt6789-dev" />
+
+    <!-- AOSP projects -->
+    <project path="build" name="kernel/build" groups="google" />
+    <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" groups="google" revision="android12-5.10" />
+    <project path="kernel/configs" name="kernel/configs" groups="google" />
+    <project path="kernel/tests" name="kernel/tests" groups="google" />
+    <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="google" />
+    <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" groups="google" />
+    <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" groups="google" />
+    <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" groups="google" />
+    <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="google" />
+</manifest>
