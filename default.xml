@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- Remotes -->
+    <remote name="aosp"
+            fetch="https://android.googlesource.com"
+            review="https://android-review.googlesource.com"
+            revision="master" />
+
+    <remote name="workspace"
+            fetch="https://github.com/pranaya2005-workspace"
+            pushurl="ssh://git@github.com/pranaya2005-workspace"
+            revision="android-12.0" />
+
+    <remote name="lineage"
+            fetch="https://github.com/LineageOS"
+            review="https://review.lineageos.org"
+            revision="lineage-19.0" />
+
+    <!-- Defaults -->
+    <default remote="aosp"
+             sync-j="8"
+             sync-c="true"
+             sync-tags="false" />
+
+    <!-- oppo6785 additions -->
+    <project path="build-configs" name="kernel_build-configs" groups="oppo6785" remote="workspace">
+        <linkfile src="build_oppo6785.sh" dest="build_oppo6785.sh" />
+    </project>
+    <project path="private/mediatek-realme-oppo6785-4.14" name="kernel_realme_mt6785" groups="oppo6785" remote="workspace" />
+
+    <!-- AOSP projects -->
+    <project path="build" name="kernel/build" groups="google" />
+    <project path="kernel/configs" name="kernel/configs" groups="google" />
+    <project path="kernel/tests" name="kernel/tests" groups="google" />
+    <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="google" />
+    <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" groups="google" />
+    <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" clone-depth="1" groups="google" remote="lineage" />
+    <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" clone-depth="1" groups="google" remote="lineage" />
+    <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" groups="google" />
+    <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="google" />
+</manifest>
