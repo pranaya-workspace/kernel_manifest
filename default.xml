@@ -29,7 +29,11 @@
     <project path="private/mediatek-realme-oppo6785-4.14" name="kernel_realme_mt6785" groups="oppo6785" remote="workspace" />
 
     <!-- AOSP projects -->
-    <project path="build" name="kernel/build" groups="google" />
+    <project path="build/kernel" name="kernel/build" groups="google">
+        <linkfile src="build.sh" dest="build/build.sh" />
+        <linkfile src="build_utils.sh" dest="build/build_utils.sh" />
+        <linkfile src="_setup_env.sh" dest="build/_setup_env.sh" />
+    </project>
     <project path="kernel/configs" name="kernel/configs" groups="google" />
     <project path="kernel/tests" name="kernel/tests" groups="google" />
     <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="google" />
