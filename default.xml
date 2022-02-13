@@ -27,6 +27,7 @@
         <linkfile src="build_oppo6785.sh" dest="build_oppo6785.sh" />
     </project>
     <project path="private/mediatek-realme-oppo6785-4.14" name="kernel_realme_mt6785" groups="oppo6785" remote="workspace" />
+    <project path="AnyKernel3" name="AnyKernel3" groups="oppo6785" remote="workspace" revision="main" />
 
     <!-- AOSP projects -->
     <project path="build/kernel" name="kernel/build" groups="google">
