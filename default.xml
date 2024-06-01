@@ -31,7 +31,7 @@
     <project path="private/mediatek-modules/connectivity/connfem" name="kernel_mediatek-modules_connectivity_connfem" groups="yunluo" remote="mt6789-dev" />
     <project path="private/mediatek-modules/connectivity/fmradio" name="kernel_mediatek-modules_connectivity_fmradio" groups="yunluo" remote="mt6789-dev" />
     <project path="private/mediatek-modules/connectivity/wlan/adaptor" name="kernel_mediatek-modules_connectivity_wlan_adaptor" groups="yunluo" remote="mt6789-dev" />
-    <project path="private/mediatek-modules/connectivity/wlan/core/gen4m" name="kernel_mediatek-modules_connectivity_wlan_core_gen4m" groups="yunluo" remote="mt6789-dev" />
+    <project path="private/mediatek-modules/connectivity/wlan/core/gen4m" name="kernel_mediatek-modules_connectivity_wlan_core_gen4m" groups="yunluo" remote="workspace" />
 
     <!-- AOSP projects -->
     <project path="build" name="kernel/build" groups="google" />
